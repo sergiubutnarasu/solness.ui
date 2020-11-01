@@ -1,0 +1,1 @@
+export const LayoutContentTheme = 'p-10 flex-1'
