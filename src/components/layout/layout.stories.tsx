@@ -296,7 +296,7 @@ const Template: Story<Props> = () => (
 
       <Panel title="Documents" actions={<Button size="small" icon="plus" />}>
         <>
-          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-50 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Holidays.doc</Typography>
@@ -317,7 +317,7 @@ const Template: Story<Props> = () => (
             </div>
           </div>
 
-          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-50 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Resume.doc</Typography>
@@ -338,7 +338,7 @@ const Template: Story<Props> = () => (
             </div>
           </div>
 
-          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-50 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Confidential.pdf</Typography>
@@ -359,7 +359,7 @@ const Template: Story<Props> = () => (
             </div>
           </div>
 
-          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-50 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">About_Company.ppt</Typography>
@@ -380,7 +380,7 @@ const Template: Story<Props> = () => (
             </div>
           </div>
 
-          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-50 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Reports.doc</Typography>

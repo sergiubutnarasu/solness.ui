@@ -38,7 +38,7 @@ const Avatar: FunctionComponent<Props> = ({
       {isTextSectionVisible && (
         <div className="text-center">
           {title && (
-            <span className="block text-base text-blue-900 font-medium mt-3">
+            <span className="block text-base text-gray-700 font-semibold mt-3">
               {title}
             </span>
           )}
