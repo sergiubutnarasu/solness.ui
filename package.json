@@ -16,7 +16,7 @@
     "url": "git+https://github.com/sergiubutnarasu/solness.ui.git"
   },
   "files": [
-    "src/**/*"
+    "build/**/*"
   ],
   "dependencies": {
     "react": "^17.0.1",
@@ -38,7 +38,6 @@
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
-    "babel-loader": "^8.2.1",
     "node-sass": "^4.14.1",
     "np": "^7.0.0",
     "prettier": "^2.1.2",
@@ -49,15 +48,11 @@
   },
   "scripts": {
     "build:tailwind": "npx tailwindcss-cli@latest build -o src/global/styles/tailwind.output.css",
-    "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc -p tsconfig.json",
     "test": "echo \"Warning: no test specified\"",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "release": "np --no-2fa"
+    "release": "npm run build && np --no-2fa"
   },
   "eslintConfig": {
     "extends": "react-app"

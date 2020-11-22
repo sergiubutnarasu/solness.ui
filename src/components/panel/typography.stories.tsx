@@ -14,7 +14,7 @@ export default {
 
 const Template: Story<Props> = ({ ...args }) => (
   <StorybookLayout>
-    <Panel title="Hello World" {...args}>
+    <Panel {...args} title="Hello World">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, delectus.
     </Panel>
   </StorybookLayout>

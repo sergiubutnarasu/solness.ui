@@ -23,8 +23,8 @@ const Template: Story<Props> = ({ size = 'base', ...args }) => (
   <StorybookLayout>
     <Avatar
       size={size}
-      url="https://en.gravatar.com/userimage/128015720/b81c215fc33e0db0461f4974d2d2cabf.jpg?size=200"
       {...args}
+      url="https://en.gravatar.com/userimage/128015720/b81c215fc33e0db0461f4974d2d2cabf.jpg?size=200"
     />
   </StorybookLayout>
 );
