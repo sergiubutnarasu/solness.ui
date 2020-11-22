@@ -15,10 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/sergiubutnarasu/solness.ui.git"
   },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build/**/*"
   ],
-  "typings": "./build/index.d.ts",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
