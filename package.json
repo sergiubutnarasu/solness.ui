@@ -18,6 +18,7 @@
   "files": [
     "build/**/*"
   ],
+  "typings": "./build/index.d.ts",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
