@@ -50,7 +50,7 @@
     "build:tailwind": "npx tailwindcss-cli@latest build -o src/global/styles/tailwind.output.css",
     "build": "tsc -p tsconfig.json",
     "test": "echo \"Warning: no test specified\"",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public",
     "release": "npm run build && np --no-2fa"
   },
