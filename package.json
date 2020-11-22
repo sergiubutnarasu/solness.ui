@@ -51,8 +51,8 @@
   },
   "scripts": {
     "build:tailwind": "npx tailwindcss-cli@latest build -o src/global/styles/tailwind.output.css",
-    "prebuild": "copyfiles -e 'node_modules/**' -e 'stories/**' -u 1 '**/*.css' build",
-    "build": "tsc -p tsconfig.json",
+    "build:copy": "copyfiles -e 'node_modules/**' -e 'stories/**' -u 1 '**/*.css' build",
+    "build": "npm run build:copy && tsc -p tsconfig.json",
     "test": "echo \"Warning: no test specified\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public",
