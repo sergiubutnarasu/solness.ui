@@ -1,3 +1,15 @@
 .flex-basis-0 {
   flex-basis: 0;
 }
+
+.w-76 {
+  width: 22rem;
+}
+
+.bg-white-opacity {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.bg-custom-blue {
+  background-color: #38426e;
+}

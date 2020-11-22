@@ -17,6 +17,7 @@ export type SizeType = keyof typeof Size;
 export type VariantType = keyof typeof Variant;
 export type FlexDirectionType = keyof typeof FlexDirection;
 export type WeightType = keyof typeof Weight;
+export type HorizontalPosition = 'left' | 'right';
 
 export type IconProps = {
   size?: string | number;

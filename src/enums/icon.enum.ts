@@ -7,8 +7,10 @@ export enum Icon {
   collection = 'collection',
   documents = 'documents',
   dots = 'dots',
+  down = 'down',
   home = 'home',
   office = 'office',
+  plus = 'plus',
   user = 'user',
   users = 'users',
 }

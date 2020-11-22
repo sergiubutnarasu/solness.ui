@@ -2,6 +2,7 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 import Avatar from '../avatar';
+import Button from '../button';
 import Icon from '../icon/icon.component';
 import Logo from '../logo';
 import Menu from '../menu';
@@ -58,7 +59,197 @@ const MenuBlock = (
 
 const Template: Story<Props> = () => (
   <StorybookLayout>
-    <Layout menu={MenuBlock}>
+    <Layout
+      menu={MenuBlock}
+      sidebar={
+        <div className="w-76 py-10 pr-10">
+          <Panel
+            title="Next Event"
+            color="blue"
+            titleColor="white"
+            actions={<Button transparent size="small" icon="plus" />}
+          >
+            <>
+              <div className="px-4 py-3 bg-white-opacity rounded-md mb-1">
+                <div className="flex items-start">
+                  <div className="w-1/3">
+                    <Typography size="small" color="white">
+                      10:30 AM
+                    </Typography>
+                    <Typography size="xsmall" color="gray">
+                      24 June
+                    </Typography>
+                  </div>
+                  <div className="w-2/3">
+                    <Typography size="small" color="white">
+                      Morning daily scrum
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 py-3 bg-white-opacity rounded-md mb-1">
+                <div className="flex items-start">
+                  <div className="w-1/3">
+                    <Typography size="small" color="white">
+                      11:30 AM
+                    </Typography>
+                    <Typography size="xsmall" color="gray">
+                      24 June
+                    </Typography>
+                  </div>
+                  <div className="w-2/3">
+                    <Typography size="small" color="white">
+                      Sprint retrospectives
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 py-3 bg-white-opacity rounded-md mb-1">
+                <div className="flex items-start">
+                  <div className="w-1/3">
+                    <Typography size="small" color="white">
+                      02:30 PM
+                    </Typography>
+                    <Typography size="xsmall" color="gray">
+                      24 June
+                    </Typography>
+                  </div>
+                  <div className="w-2/3">
+                    <Typography size="small" color="white">
+                      Sprint planning
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 py-3 bg-white-opacity rounded-md">
+                <div className="flex items-start">
+                  <div className="w-1/3">
+                    <Typography size="small" color="white">
+                      03:30 PM
+                    </Typography>
+                    <Typography size="xsmall" color="gray">
+                      24 June
+                    </Typography>
+                  </div>
+                  <div className="w-2/3">
+                    <Typography size="small" color="white">
+                      Team synchronization
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+            </>
+          </Panel>
+
+          <Panel title="Team Members">
+            <>
+              <div className="flex items-center mb-3">
+                <div className="w-1/5 flex justify-start">
+                  <Avatar
+                    size="base"
+                    url="https://en.gravatar.com/userimage/128015720/b81c215fc33e0db0461f4974d2d2cabf.jpg?size=200"
+                  />
+                </div>
+                <div className="w-4/5">
+                  <Typography size="small" weight="semibold">
+                    Sergiu Butnarasu
+                  </Typography>
+                  <Typography size="xsmall" color="gray">
+                    Software Developer
+                  </Typography>
+                </div>
+                <div className="w-1/5 flex items-center justify-end">
+                  <Icon icon="dots" size="small" color="gray" />
+                </div>
+              </div>
+
+              <div className="flex items-center mb-3">
+                <div className="w-1/5 flex justify-start">
+                  <Avatar
+                    size="base"
+                    url="https://randomuser.me/api/portraits/women/44.jpg"
+                  />
+                </div>
+                <div className="w-4/5">
+                  <Typography size="small" weight="semibold">
+                    June Cha
+                  </Typography>
+                  <Typography size="xsmall" color="gray">
+                    Graphic Designer
+                  </Typography>
+                </div>
+                <div className="w-1/5 flex items-center justify-end">
+                  <Icon icon="dots" size="small" color="gray" />
+                </div>
+              </div>
+
+              <div className="flex items-center mb-3">
+                <div className="w-1/5 flex justify-start">
+                  <Avatar
+                    size="base"
+                    url="https://randomuser.me/api/portraits/women/95.jpg"
+                  />
+                </div>
+                <div className="w-4/5">
+                  <Typography size="small" weight="semibold">
+                    Lucrecia Calder
+                  </Typography>
+                  <Typography size="xsmall" color="gray">
+                    Software Developer
+                  </Typography>
+                </div>
+                <div className="w-1/5 flex items-center justify-end">
+                  <Icon icon="dots" size="small" color="gray" />
+                </div>
+              </div>
+
+              <div className="flex items-center mb-3">
+                <div className="w-1/5 flex justify-start">
+                  <Avatar
+                    size="base"
+                    url="https://randomuser.me/api/portraits/men/36.jpg"
+                  />
+                </div>
+                <div className="w-4/5">
+                  <Typography size="small" weight="semibold">
+                    Oscar Thomsen
+                  </Typography>
+                  <Typography size="xsmall" color="gray">
+                    Software Developer
+                  </Typography>
+                </div>
+                <div className="w-1/5 flex items-center justify-end">
+                  <Icon icon="dots" size="small" color="gray" />
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-1/5 flex justify-start">
+                  <Avatar
+                    size="base"
+                    url="https://randomuser.me/api/portraits/women/65.jpg"
+                  />
+                </div>
+                <div className="w-4/5">
+                  <Typography size="small" weight="semibold">
+                    Renee Sims
+                  </Typography>
+                  <Typography size="xsmall" color="gray">
+                    Web Designer
+                  </Typography>
+                </div>
+                <div className="w-1/5 flex items-center justify-end">
+                  <Icon icon="dots" size="small" color="gray" />
+                </div>
+              </div>
+            </>
+          </Panel>
+        </div>
+      }
+    >
       <div className="rounded-lg shadow-lg bg-indigo-500 p-8 mb-8">
         <Typography size="large" color="white" weight="semibold">
           Welcome back, Sergiu Butnarasu!
@@ -103,9 +294,9 @@ const Template: Story<Props> = () => (
         </Panel>
       </div>
 
-      <Panel title="Documents">
+      <Panel title="Documents" actions={<Button size="small" icon="plus" />}>
         <>
-          <div className="bg-gray-200 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Holidays.doc</Typography>
@@ -121,12 +312,12 @@ const Template: Story<Props> = () => (
                 </Typography>
               </div>
               <div className="w-1/6 flex items-center justify-end">
-                <Icon icon="dots" color="gray" />
+                <Icon icon="dots" size="small" color="gray" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-200 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Resume.doc</Typography>
@@ -142,12 +333,12 @@ const Template: Story<Props> = () => (
                 </Typography>
               </div>
               <div className="w-1/6 flex items-center justify-end">
-                <Icon icon="dots" color="gray" />
+                <Icon icon="dots" size="small" color="gray" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-200 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Confidential.pdf</Typography>
@@ -163,12 +354,12 @@ const Template: Story<Props> = () => (
                 </Typography>
               </div>
               <div className="w-1/6 flex items-center justify-end">
-                <Icon icon="dots" color="gray" />
+                <Icon icon="dots" size="small" color="gray" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-200 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">About_Company.ppt</Typography>
@@ -184,12 +375,12 @@ const Template: Story<Props> = () => (
                 </Typography>
               </div>
               <div className="w-1/6 flex items-center justify-end">
-                <Icon icon="dots" color="gray" />
+                <Icon icon="dots" size="small" color="gray" />
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-200 px-4 py-3 rounded-md mb-1">
+          <div className="bg-gray-100 px-4 py-3 rounded-md mb-1">
             <div className="flex items-center">
               <div className="w-1/2">
                 <Typography size="small">Reports.doc</Typography>
@@ -205,7 +396,7 @@ const Template: Story<Props> = () => (
                 </Typography>
               </div>
               <div className="w-1/6 flex items-center justify-end">
-                <Icon icon="dots" color="gray" />
+                <Icon icon="dots" size="small" color="gray" />
               </div>
             </div>
           </div>

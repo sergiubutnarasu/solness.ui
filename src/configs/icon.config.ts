@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import {
   HiBell,
+  HiChevronDown,
   HiCog,
   HiDotsVertical,
   HiOutlineBriefcase,
@@ -10,6 +11,7 @@ import {
   HiOutlineDocumentDuplicate,
   HiOutlineHome,
   HiOutlineOfficeBuilding,
+  HiOutlinePlus,
   HiOutlineUser,
   HiOutlineUsers,
 } from 'react-icons/hi';
@@ -25,8 +27,10 @@ export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.collection]: HiOutlineCollection,
   [Icon.documents]: HiOutlineDocumentDuplicate,
   [Icon.dots]: HiDotsVertical,
+  [Icon.down]: HiChevronDown,
   [Icon.home]: HiOutlineHome,
   [Icon.office]: HiOutlineOfficeBuilding,
   [Icon.users]: HiOutlineUsers,
   [Icon.user]: HiOutlineUser,
+  [Icon.plus]: HiOutlinePlus,
 };
