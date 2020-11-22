@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import * as Theme from './theme';
-import '../../global/styles/styles.css';
 
 export interface Props {
   children: ReactNode;
