@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactNode, useRef, useState } from 'react';
 import { useOnClickOutside } from '../../hooks';
-import './styles.css';
 
 export interface Props {
   children: ReactNode;
