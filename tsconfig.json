@@ -15,7 +15,11 @@
     "declaration": true,
     "experimentalDecorators": true,
     "baseUrl": "./",
-    "typeRoots": ["node_modules/@types", "@types"]
+    "typeRoots": ["node_modules/@types", "@types"],
+    "paths": {
+      "@solness/ui": ["src/index.ts"],
+      "@solness/ui/*": ["src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
