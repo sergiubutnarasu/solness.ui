@@ -26,9 +26,9 @@ const Panel: FunctionComponent<Props> = ({
           {title}
         </Typography>
 
-        {actions && <div className="ml-4">{actions}</div>}
+        {actions && <div className="ml-4 flex">{actions}</div>}
       </div>
-      <div className="mt-3">{children}</div>
+      <div className="mt-4">{children}</div>
     </div>
   );
 };

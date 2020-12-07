@@ -1,31 +1,39 @@
-import React, { ElementType, FunctionComponent, HTMLAttributes } from 'react';
-import Icon from '../icon';
+import React, { FunctionComponent } from 'react';
 import { ColorType, HorizontalPosition, IconType, SizeType } from '../../types';
+import Icon from '../icon';
 import * as Theme from './theme';
 
 export interface Props {
-  as?: ElementType<HTMLAttributes<HTMLElement>>;
+  type?: 'button' | 'submit';
   icon?: IconType;
   color?: ColorType;
   size?: SizeType;
   transparent?: boolean;
   iconPosition?: HorizontalPosition;
+  iconColor?: ColorType;
+  onClick?: () => void;
 }
 
 const Button: FunctionComponent<Props> = ({
-  as = 'button',
+  type = 'button',
   icon,
   iconPosition = 'left',
+  iconColor = 'white',
   children,
   color = 'indigo',
   size = 'base',
   transparent = false,
+  onClick,
 }) => {
-  const Element = as;
-
   const colorTheme = transparent ? '' : Theme.ButtonColorTheme[color];
   const sizeTheme = Theme.ButtonSizeTheme[size];
   const theme = `${Theme.ButtonTheme} ${colorTheme} ${sizeTheme}`;
+
+  let textPadding = iconPosition === 'left' ? 'pr-1' : 'pl-1';
+
+  if (!icon) {
+    textPadding = 'px-1';
+  }
 
   const getIcon = (position: HorizontalPosition) => {
     if (!icon) {
@@ -44,17 +52,19 @@ const Button: FunctionComponent<Props> = ({
 
     return (
       <div className={`flex items-center ${iconMargin}`}>
-        <Icon icon={icon} color="white" size={size} />
+        <Icon icon={icon} color={iconColor} size={size} />
       </div>
     );
   };
 
   return (
-    <Element className={theme}>
+    <button className={theme} type={type} onClick={onClick}>
       {getIcon('left')}
-      {children}
+      {children && (
+        <div className={`leading-none ${textPadding}`}>{children}</div>
+      )}
       {getIcon('right')}
-    </Element>
+    </button>
   );
 };
 

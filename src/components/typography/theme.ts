@@ -13,7 +13,7 @@ export const TypographySizeTheme: Record<SizeType, string> = {
 export const TypographyColorTheme: Record<ColorType, string> = {
   [Color.black]: 'text-gray-800',
   [Color.blue]: 'text-blue-900',
-  [Color.gray]: 'text-gray-600',
+  [Color.gray]: 'text-gray-500',
   [Color.green]: 'text-green-500',
   [Color.indigo]: 'text-indigo-500',
   [Color.orange]: 'text-orange-500',

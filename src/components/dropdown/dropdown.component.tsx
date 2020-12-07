@@ -18,7 +18,12 @@ const Dropdown: FunctionComponent<Props> = ({ children, menu }) => {
     <div ref={ref} className={`sln-dropdown ${theme}`}>
       <div onClick={toggleDropdown}>{children}</div>
 
-      <div className="sln-dropdown-menu rounded shadow">{menu}</div>
+      <div
+        className="sln-dropdown-menu rounded shadow"
+        onClick={toggleDropdown}
+      >
+        {menu}
+      </div>
     </div>
   );
 };

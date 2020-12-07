@@ -2,7 +2,7 @@ import { Color, Size } from '../../enums';
 import { ColorType, SizeType } from '../../types';
 
 export const ButtonTheme =
-  'flex items-center cursor-pointer rounded-lg select-none outline-none focus:outline-none';
+  'flex items-center cursor-pointer rounded-md select-none outline-none focus:outline-none';
 
 export const ButtonColorTheme: Record<ColorType, string> = {
   [Color.black]: 'shadow-md bg-black color text-white',

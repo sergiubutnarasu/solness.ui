@@ -4,6 +4,7 @@ import {
   HiChevronDown,
   HiCog,
   HiDotsVertical,
+  HiDownload,
   HiOutlineBriefcase,
   HiOutlineCalendar,
   HiOutlineCheck,
@@ -14,6 +15,7 @@ import {
   HiOutlinePlus,
   HiOutlineUser,
   HiOutlineUsers,
+  HiX,
 } from 'react-icons/hi';
 import { Icon } from '../enums';
 import { IconProps } from '../types';
@@ -23,11 +25,13 @@ export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.briefcase]: HiOutlineBriefcase,
   [Icon.calendar]: HiOutlineCalendar,
   [Icon.check]: HiOutlineCheck,
+  [Icon.close]: HiX,
   [Icon.cog]: HiCog,
   [Icon.collection]: HiOutlineCollection,
   [Icon.documents]: HiOutlineDocumentDuplicate,
   [Icon.dots]: HiDotsVertical,
   [Icon.down]: HiChevronDown,
+  [Icon.download]: HiDownload,
   [Icon.home]: HiOutlineHome,
   [Icon.office]: HiOutlineOfficeBuilding,
   [Icon.users]: HiOutlineUsers,

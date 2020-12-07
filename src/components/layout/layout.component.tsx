@@ -9,7 +9,7 @@ export interface Props {
 
 const Layout: FunctionComponent<Props> = ({ children, menu, sidebar }) => {
   return (
-    <div className="flex bg-gray-50">
+    <div className="flex w-full bg-gray-100">
       {menu && <div>{menu}</div>}
       <div className={Theme.LayoutContentTheme}>{children}</div>
       {sidebar && <div>{sidebar}</div>}
