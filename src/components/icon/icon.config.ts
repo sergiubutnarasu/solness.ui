@@ -2,6 +2,8 @@ import { FunctionComponent } from 'react';
 import {
   HiBell,
   HiChevronDown,
+  HiChevronLeft,
+  HiChevronRight,
   HiCog,
   HiDotsVertical,
   HiDownload,
@@ -17,8 +19,8 @@ import {
   HiOutlineUsers,
   HiX,
 } from 'react-icons/hi';
-import { Icon } from '../enums';
-import { IconProps } from '../types';
+import { Icon } from '../../enums';
+import { IconProps } from '../../types';
 
 export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.bell]: HiBell,
@@ -33,8 +35,10 @@ export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.down]: HiChevronDown,
   [Icon.download]: HiDownload,
   [Icon.home]: HiOutlineHome,
+  [Icon.left]: HiChevronLeft,
   [Icon.office]: HiOutlineOfficeBuilding,
+  [Icon.plus]: HiOutlinePlus,
+  [Icon.right]: HiChevronRight,
   [Icon.users]: HiOutlineUsers,
   [Icon.user]: HiOutlineUser,
-  [Icon.plus]: HiOutlinePlus,
 };

@@ -1,15 +1,32 @@
-import React, { FunctionComponent, ReactNode, useRef, useState } from 'react';
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useOnClickOutside } from '../../hooks';
 
 export interface Props {
   children: ReactNode;
   menu: ReactNode;
+  open?: boolean;
+  persist?: boolean;
 }
 
-const Dropdown: FunctionComponent<Props> = ({ children, menu }) => {
+const Dropdown: FunctionComponent<Props> = ({
+  children,
+  menu,
+  open = false,
+  persist = false,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(open);
   useOnClickOutside(ref, () => setIsOpen(false));
+
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
 
   const theme = isOpen ? 'open' : '';
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -20,7 +37,7 @@ const Dropdown: FunctionComponent<Props> = ({ children, menu }) => {
 
       <div
         className="sln-dropdown-menu rounded shadow"
-        onClick={toggleDropdown}
+        onClick={() => !persist && toggleDropdown()}
       >
         {menu}
       </div>

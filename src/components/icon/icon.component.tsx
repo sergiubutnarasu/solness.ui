@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { ICON_CONFIG } from '../../configs';
+import { ColorTheme, SizeTheme } from '../../theme';
 import { ColorType, IconType, SizeType } from '../../types';
-import { SizeTheme, ColorTheme } from '../../theme';
+import { ICON_CONFIG } from './icon.config';
 
 export interface Props {
   icon: IconType;
