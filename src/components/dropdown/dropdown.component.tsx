@@ -12,6 +12,7 @@ export interface Props {
   menu: ReactNode;
   open?: boolean;
   persist?: boolean;
+  onClose?: () => void;
 }
 
 const Dropdown: FunctionComponent<Props> = ({
@@ -19,17 +20,29 @@ const Dropdown: FunctionComponent<Props> = ({
   menu,
   open = false,
   persist = false,
+  onClose,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(open);
-  useOnClickOutside(ref, () => setIsOpen(false));
+
+  useOnClickOutside(ref, () => {
+    setIsOpen(false);
+    onClose?.();
+  });
 
   useEffect(() => {
     setIsOpen(open);
   }, [open]);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+
+    if (isOpen) {
+      onClose?.();
+    }
+  };
+
   const theme = isOpen ? 'open' : '';
-  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
     <div ref={ref} className={`sln-dropdown ${theme}`}>

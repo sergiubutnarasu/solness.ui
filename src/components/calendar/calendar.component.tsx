@@ -19,9 +19,10 @@ const CalendarDays: FunctionComponent = () => (
 
 export interface Props {
   value?: Date;
+  onChange?: (date: Date) => void;
 }
 
-const Calendar: FunctionComponent<Props> = ({ value }) => {
+const Calendar: FunctionComponent<Props> = ({ value, onChange }) => {
   const today = new Date();
   const [currentValue, setCurrentValue] = useState(value ?? today);
   const [currentDate, setCurrentDate] = useState(currentValue);
@@ -51,6 +52,41 @@ const Calendar: FunctionComponent<Props> = ({ value }) => {
 
     return { previousDays, currentDays };
   }, [currentDate]);
+
+  const checkIsToday = (day: number) => {
+    const momentDate = moment(new Date()).startOf('day');
+
+    const date = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      day,
+    );
+
+    return momentDate.isSame(date);
+  };
+
+  const checkSelected = (day: number, isFromPreviousMonth = false) => {
+    const momentDate = moment(currentValue).startOf('day');
+
+    const fromDate = isFromPreviousMonth
+      ? moment(currentDate).add(-1, 'month').toDate()
+      : currentDate;
+
+    const date = new Date(fromDate.getFullYear(), fromDate.getMonth(), day);
+
+    return momentDate.isSame(date);
+  };
+
+  const handleSelect = (day: number, isFromPreviousMonth = false) => {
+    const fromDate = isFromPreviousMonth
+      ? moment(currentDate).add(-1, 'month').toDate()
+      : currentDate;
+
+    const date = new Date(fromDate.getFullYear(), fromDate.getMonth(), day);
+
+    setCurrentValue(date);
+    onChange?.(date);
+  };
 
   const goToNextMonth = () =>
     setCurrentDate(moment(currentDate).add(1, 'month').toDate());
@@ -95,13 +131,23 @@ const Calendar: FunctionComponent<Props> = ({ value }) => {
       <CalendarDays />
 
       {previousDays.map((day) => (
-        <CalendarItem key={day} isFromPreviousMonth>
-          {day}
-        </CalendarItem>
+        <CalendarItem
+          key={day}
+          isFromPreviousMonth
+          day={day}
+          isSelected={checkSelected(day, true)}
+          onSelect={() => handleSelect(day, true)}
+        />
       ))}
 
       {currentDays.map((day) => (
-        <CalendarItem key={day}>{day}</CalendarItem>
+        <CalendarItem
+          isToday={checkIsToday(day)}
+          isSelected={checkSelected(day)}
+          key={day}
+          day={day}
+          onSelect={handleSelect}
+        />
       ))}
     </div>
   );
