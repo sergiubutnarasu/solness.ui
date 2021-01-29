@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import Dropdown from '../dropdown';
 import Icon from '../icon';
 import Calendar from '../calendar';
@@ -14,23 +14,25 @@ const Datepicker: FunctionComponent<Props> = ({ value, onChange }) => {
   const [open, setOpen] = useState(false);
   const [currentDate, setCurrentDate] = useState(value || new Date());
 
+  useEffect(() => {
+    setCurrentDate(value || new Date());
+  }, [value]);
+
   const closeDropdown = () => setOpen(false);
+
+  const handleChange = (newDate: Date) => {
+    setCurrentDate(newDate);
+    closeDropdown();
+    onChange?.(newDate);
+  };
+
   const inputTheme = `px-3 py-2 w-full text-sm leading-none appearance-none border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100`;
 
   return (
     <Dropdown
       persist
       open={open}
-      menu={
-        <Calendar
-          value={currentDate}
-          onChange={(newDate) => {
-            setCurrentDate(newDate);
-            closeDropdown();
-            onChange?.(newDate);
-          }}
-        />
-      }
+      menu={<Calendar value={currentDate} onChange={handleChange} />}
       onClose={() => {
         closeDropdown();
       }}
