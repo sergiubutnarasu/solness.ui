@@ -11,6 +11,7 @@ export interface Props {
   transparent?: boolean;
   iconPosition?: HorizontalPosition;
   iconColor?: ColorType;
+  loading?: boolean;
   onClick?: () => void;
 }
 
@@ -23,11 +24,13 @@ const Button: FunctionComponent<Props> = ({
   color = 'indigo',
   size = 'base',
   transparent = false,
+  loading = false,
   onClick,
 }) => {
   const colorTheme = transparent ? '' : Theme.ButtonColorTheme[color];
   const sizeTheme = Theme.ButtonSizeTheme[size];
   const theme = `${Theme.ButtonTheme} ${colorTheme} ${sizeTheme}`;
+  const buttonContentTheme = Theme.ButtonContentTheme(loading);
 
   let textPadding = iconPosition === 'left' ? 'pr-1' : 'pl-1';
 
@@ -59,11 +62,20 @@ const Button: FunctionComponent<Props> = ({
 
   return (
     <button className={theme} type={type} onClick={onClick}>
-      {getIcon('left')}
-      {children && (
-        <div className={`leading-none ${textPadding}`}>{children}</div>
+      {loading && (
+        <div className="absolute left-0 right-0 flex justify-center items-center">
+          <div className="animate-spin flex justify-center items-center">
+            <Icon icon="loading" color={iconColor} size={size} />
+          </div>
+        </div>
       )}
-      {getIcon('right')}
+      <div className={buttonContentTheme}>
+        {getIcon('left')}
+        {children && (
+          <div className={`leading-none ${textPadding}`}>{children}</div>
+        )}
+        {getIcon('right')}
+      </div>
     </button>
   );
 };

@@ -18,6 +18,7 @@ import {
   HiOutlineUser,
   HiOutlineUsers,
   HiX,
+  HiOutlineRefresh,
 } from 'react-icons/hi';
 import { Icon } from '../../enums';
 import { IconProps } from '../../types';
@@ -36,6 +37,7 @@ export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.download]: HiDownload,
   [Icon.home]: HiOutlineHome,
   [Icon.left]: HiChevronLeft,
+  [Icon.loading]: HiOutlineRefresh,
   [Icon.office]: HiOutlineOfficeBuilding,
   [Icon.plus]: HiOutlinePlus,
   [Icon.right]: HiChevronRight,

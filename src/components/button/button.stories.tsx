@@ -9,6 +9,8 @@ export default {
   title: 'Components/Button',
   component: Button,
   argTypes: {
+    loading: { control: 'boolean' },
+    children: { control: 'text' },
     size: {
       control: {
         type: 'select',
@@ -26,9 +28,7 @@ export default {
 
 const Template: Story<Props> = ({ ...args }) => (
   <StorybookLayout>
-    <Button {...args} icon="plus">
-      Click me
-    </Button>
+    <Button {...args} icon="plus" />
   </StorybookLayout>
 );
 

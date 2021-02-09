@@ -12,6 +12,7 @@ export enum Icon {
   download = 'download',
   home = 'home',
   left = 'left',
+  loading = 'loading',
   office = 'office',
   plus = 'plus',
   right = 'right',
