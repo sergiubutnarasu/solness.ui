@@ -1,8 +1,7 @@
-import { Color } from '../../enums';
-import { ColorType } from '../../types';
+import { Color, Size } from '../../enums';
+import { ColorType, SizeType } from '../../types';
 
-export const PanelTheme =
-  'rounded-lg flex-grow flex-basis-0 shadow-lg p-6 mb-8';
+export const PanelTheme = 'rounded-lg flex-grow flex-basis-0 p-6 mb-8';
 
 export const PanelColorTheme: Record<ColorType, string> = {
   [Color.black]: 'bg-black text-white',
@@ -17,4 +16,13 @@ export const PanelColorTheme: Record<ColorType, string> = {
   [Color.teal]: 'bg-teal-500',
   [Color.white]: 'bg-white',
   [Color.yellow]: 'bg-yellow-500',
+};
+
+export const ShadowTheme: Record<SizeType, string> = {
+  [Size.base]: '',
+  [Size.extra]: 'shadow-2xl',
+  [Size.large]: 'shadow-lg',
+  [Size.small]: 'shadow-sm',
+  [Size.xlarge]: 'shadow-xl',
+  [Size.xsmall]: '',
 };

@@ -1,13 +1,14 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { ColorType } from '../../types';
+import { ColorType, SizeType } from '../../types';
 import Typography from '../typography';
 import * as Theme from './theme';
 export interface Props {
-  title: string;
   children: ReactNode;
+  title?: string;
   actions?: ReactNode;
   color?: ColorType;
   titleColor?: ColorType;
+  shadow?: SizeType;
 }
 
 const Panel: FunctionComponent<Props> = ({
@@ -16,19 +17,25 @@ const Panel: FunctionComponent<Props> = ({
   actions,
   color = 'white',
   titleColor = 'black',
+  shadow = 'small',
 }) => {
-  const theme = `${Theme.PanelTheme} ${Theme.PanelColorTheme[color]}`;
+  const theme = `${Theme.PanelTheme} ${Theme.PanelColorTheme[color]} ${Theme.ShadowTheme[shadow]}`;
+
+  const hasHeader = !!title && !!actions;
+  const contentTheme = hasHeader ? 'mt-4' : '';
 
   return (
     <div className={theme}>
       <div className="flex items-center justify-between">
-        <Typography size="xsmall" weight="semibold" color={titleColor}>
-          {title}
-        </Typography>
+        {title && (
+          <Typography size="xsmall" weight="semibold" color={titleColor}>
+            {title}
+          </Typography>
+        )}
 
         {actions && <div className="ml-4 flex">{actions}</div>}
       </div>
-      <div className="mt-4">{children}</div>
+      <div className={contentTheme}>{children}</div>
     </div>
   );
 };

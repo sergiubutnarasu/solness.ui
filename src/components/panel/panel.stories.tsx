@@ -1,7 +1,7 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
-import { Color } from '../../enums';
+import { Color, Size } from '../../enums';
 import StorybookLayout from '../storybook-layout';
 import Panel, { Props } from './panel.component';
 
@@ -13,6 +13,12 @@ export default {
       control: {
         type: 'select',
         options: Object.keys(Color),
+      },
+    },
+    shadow: {
+      control: {
+        type: 'select',
+        options: Object.keys(Size),
       },
     },
   },
