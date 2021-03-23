@@ -21,7 +21,7 @@ const Panel: FunctionComponent<Props> = ({
 }) => {
   const theme = `${Theme.PanelTheme} ${Theme.PanelColorTheme[color]} ${Theme.ShadowTheme[shadow]}`;
 
-  const hasHeader = !!title && !!actions;
+  const hasHeader = !!title || !!actions;
   const contentTheme = hasHeader ? 'mt-4' : '';
 
   return (
@@ -35,6 +35,7 @@ const Panel: FunctionComponent<Props> = ({
 
         {actions && <div className="ml-4 flex">{actions}</div>}
       </div>
+
       <div className={contentTheme}>{children}</div>
     </div>
   );
