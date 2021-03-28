@@ -15,3 +15,4 @@ export { default as MenuItem } from './menu-item';
 export { default as NotificationButton } from './notification-button';
 export { default as Panel } from './panel';
 export { default as Typography } from './typography';
+export { default as Section } from './section';
