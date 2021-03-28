@@ -26,7 +26,7 @@ const Datepicker: FunctionComponent<Props> = ({ value, onChange }) => {
     onChange?.(newDate);
   };
 
-  const inputTheme = `px-3 py-2 w-full text-sm leading-none appearance-none border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-100`;
+  const inputTheme = `px-3 py-2 w-full text-sm leading-none appearance-none border border-gray-300 rounded-md focus:outline-none focus:border-gray-400`;
 
   return (
     <Dropdown

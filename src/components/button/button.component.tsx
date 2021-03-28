@@ -13,6 +13,7 @@ export interface Props {
   iconColor?: ColorType;
   loading?: boolean;
   onClick?: () => void;
+  rounded?: 'none' | 'default' | 'full';
 }
 
 const Button: FunctionComponent<Props> = ({
@@ -25,11 +26,12 @@ const Button: FunctionComponent<Props> = ({
   size = 'base',
   transparent = false,
   loading = false,
+  rounded = 'default',
   onClick,
 }) => {
   const colorTheme = transparent ? '' : Theme.ButtonColorTheme[color];
   const sizeTheme = Theme.ButtonSizeTheme[size];
-  const theme = `${Theme.ButtonTheme} ${colorTheme} ${sizeTheme}`;
+  const theme = `${Theme.ButtonTheme} ${Theme.ButtonRoundedTheme[rounded]} ${colorTheme} ${sizeTheme}`;
   const buttonContentTheme = Theme.ButtonContentTheme(loading);
 
   let textPadding = iconPosition === 'left' ? 'pr-1' : 'pl-1';

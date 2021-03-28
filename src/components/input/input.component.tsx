@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import Typography from '../typography';
 
@@ -6,8 +6,10 @@ export interface Props {
   name: string;
   required?: boolean;
   placeholder?: string;
-  label?: string;
+  label?: ReactNode;
   type?: string;
+  bottom?: number;
+  description?: ReactNode;
   validators?: Partial<RegisterOptions>;
 }
 
@@ -17,12 +19,14 @@ const Input: FunctionComponent<Props> = ({
   placeholder,
   type = 'text',
   required = false,
+  bottom = 0,
+  description,
   validators,
 }) => {
   const { register, errors } = useFormContext();
 
   return (
-    <div className="mb-4">
+    <div className={`mb-${bottom}`}>
       {label && (
         <label
           htmlFor={name}
@@ -32,7 +36,7 @@ const Input: FunctionComponent<Props> = ({
         </label>
       )}
       <input
-        className="px-3 py-3 w-full text-gray-700 text-sm leading-none appearance-none border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-100"
+        className="px-3 py-3 w-full text-gray-700 text-sm leading-none appearance-none border border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
         type={type}
         id={name}
         name={name}
@@ -42,8 +46,17 @@ const Input: FunctionComponent<Props> = ({
           ...validators,
         })}
       />
+
+      {description && (
+        <div className="pt-2">
+          <Typography as="div" size="xsmall" color="gray">
+            {description}
+          </Typography>
+        </div>
+      )}
+
       {errors?.[name] && (
-        <div className="pt-1">
+        <div className="pt-2">
           <Typography size="xsmall" color="red">
             {errors?.[name]?.message}
           </Typography>

@@ -2,7 +2,7 @@ import { Color, Size } from '../../enums';
 import { ColorType, SizeType } from '../../types';
 
 export const ButtonTheme =
-  'flex items-center relative cursor-pointer rounded-md select-none outline-none focus:outline-none';
+  'flex items-center relative cursor-pointer select-none outline-none focus:outline-none';
 
 export const ButtonContentTheme = (loading?: boolean) => {
   let result = 'visible';
@@ -30,10 +30,16 @@ export const ButtonColorTheme: Record<ColorType, string> = {
 };
 
 export const ButtonSizeTheme: Record<SizeType, string> = {
-  [Size.base]: 'text-base px-3 py-2',
+  [Size.base]: 'text-sm px-3 py-3',
   [Size.extra]: 'text-2xl px-6 py-5',
   [Size.large]: 'text-lg px-4 py-3',
   [Size.small]: 'text-sm p-2',
   [Size.xlarge]: 'text-xl px-5 py-4',
   [Size.xsmall]: 'text-xs px-2 py-1',
+};
+
+export const ButtonRoundedTheme: Record<'none' | 'default' | 'full', string> = {
+  default: 'rounded-md',
+  full: 'rounded-full',
+  none: '',
 };

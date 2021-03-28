@@ -19,6 +19,10 @@ import {
   HiOutlineUsers,
   HiX,
   HiOutlineRefresh,
+  HiOutlineEye,
+  HiOutlinePencil,
+  HiChevronUp,
+  HiOutlineTrash,
 } from 'react-icons/hi';
 import { Icon } from '../../enums';
 import { IconProps } from '../../types';
@@ -31,16 +35,20 @@ export const ICON_CONFIG: Record<Icon, FunctionComponent<IconProps>> = {
   [Icon.close]: HiX,
   [Icon.cog]: HiCog,
   [Icon.collection]: HiOutlineCollection,
+  [Icon.delete]: HiOutlineTrash,
   [Icon.documents]: HiOutlineDocumentDuplicate,
   [Icon.dots]: HiDotsVertical,
   [Icon.down]: HiChevronDown,
   [Icon.download]: HiDownload,
+  [Icon.edit]: HiOutlinePencil,
   [Icon.home]: HiOutlineHome,
   [Icon.left]: HiChevronLeft,
   [Icon.loading]: HiOutlineRefresh,
   [Icon.office]: HiOutlineOfficeBuilding,
   [Icon.plus]: HiOutlinePlus,
   [Icon.right]: HiChevronRight,
+  [Icon.up]: HiChevronUp,
   [Icon.users]: HiOutlineUsers,
   [Icon.user]: HiOutlineUser,
+  [Icon.view]: HiOutlineEye,
 };
