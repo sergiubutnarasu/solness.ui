@@ -12,7 +12,7 @@ export interface Props {
   onClick?: () => void;
 }
 
-const MenuItem = forwardRef<HTMLAnchorElement, Props>(
+const MenuItem = forwardRef<HTMLSpanElement, Props>(
   (
     { icon, children, iconColor, active = false, size = 'base', onClick },
     ref,
@@ -23,14 +23,14 @@ const MenuItem = forwardRef<HTMLAnchorElement, Props>(
 
     return (
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <a ref={ref} className={theme} onClick={onClick}>
+      <span ref={ref} className={theme} onClick={onClick}>
         {icon && (
           <span className="mr-3">
             <Icon icon={icon} color={iconColor} />
           </span>
         )}
         <>{children}</>
-      </a>
+      </span>
     );
   },
 );
