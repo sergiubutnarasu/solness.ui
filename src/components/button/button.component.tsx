@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import { ColorType, HorizontalPosition, IconType, SizeType } from '../../types';
 import Icon from '../icon';
 import * as Theme from './theme';
@@ -13,6 +13,7 @@ export interface Props {
   iconColor?: ColorType;
   loading?: boolean;
   rounded?: 'none' | 'default' | 'full';
+  children?: ReactNode;
   onClick?: () => void;
 }
 
