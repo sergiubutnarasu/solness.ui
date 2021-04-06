@@ -27,9 +27,10 @@ const Panel: FunctionComponent<Props> = ({
   const theme = `${Theme.PanelTheme} ${Theme.PanelColorTheme[color]} ${Theme.ShadowTheme[shadow]}`;
 
   const hasHeader = !!title || !!actions || !!description;
-  const contentTheme = hasHeader ? 'mt-6' : '';
+  const contentTheme = hasHeader ? 'mt-4' : '';
   const isPage = type === 'page';
-  const titleSize = isPage ? 'large' : 'xsmall';
+  const titleSize = isPage ? 'extra' : 'xsmall';
+  const titleWeight = isPage ? 'light' : 'semibold';
 
   return (
     <div className={theme}>
@@ -38,7 +39,7 @@ const Panel: FunctionComponent<Props> = ({
           <Typography
             as="div"
             size={titleSize}
-            weight="semibold"
+            weight={titleWeight}
             color={titleColor}
           >
             {title}
